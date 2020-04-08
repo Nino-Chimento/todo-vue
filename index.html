@@ -15,6 +15,20 @@
            <div class="row">
                <div class="col-12">
                     <h1 class="text-center">{{ title }}</h1>
+                    <ul class=" list-group">
+                        <li  v-for="(todo,index) in todos" class="list-group-item d-flex justify-content-between">
+                            {{todo.text}}
+                            <span v-if = "todo.check" class="text-right">
+                                v
+                            </span>
+                            <span 
+                            v-else="todo.check"  class="text-right"> da fare
+                            </span>
+                            <span @click= "cancella(index)">
+                                x 
+                            </span>
+                        </li>
+                    </ul>
                </div>
            </div>
        </div>
