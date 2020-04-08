@@ -5,11 +5,13 @@ var app = new Vue({
         todos :[
             {
                 text : "imparare VueJs",
-                check : false
+                check : false,
+                input : false
             },
             {
                 text : "trasferirmi",
-                check :false
+                check :false,
+                input : false
             }
         ],
         newtodo : " "
@@ -21,13 +23,19 @@ var app = new Vue({
         crea(){
            this.todos.push({
                text:this.newtodo,
-               check:false
+               check:false,
+               input : false
            })
            this.newtodo = ""; 
         },
         fatto(index){
             this.todos[index].check = !this.todos[index].check;
         }, 
+        modifica(index){
+            this.todos[index].input = !this.todos[index].input;
+            
+        },
+        
     }   
 })
             

@@ -16,8 +16,17 @@
                <div class="col-12">
                     <h1 class="text-center">{{ title }}</h1>
                     <ul class=" list-group">
-                        <li  v-for="(todo,index) in todos" class="list-group-item d-flex justify-content-between">
-                            {{todo.text}}
+                        <li v-for="(todo,index) in todos" :class="(todo.check) ? ' fatto list-group-item d-flex justify-content-between' : 'list-group-item d-flex justify-content-between'" >
+                            <p v-if = "!todo.input" @click="modifica(index)"
+                            >
+                                {{todo.text}}
+                            </p>
+                            
+                            <input 
+                            v-if = "todo.input"
+                            v-on:keyup.13 =" modifica(index)"
+                            type="text" 
+                            v-model= " todo.text ">
                             <span v-if = "todo.check" 
                             @click= "fatto(index)"
                             class="text-right btn btn-danger">
