@@ -11,13 +11,21 @@ var app = new Vue({
                 text : "trasferirmi",
                 check :false
             }
-    ],
+        ],
+        newtodo : " "
     },
     methods:{
         cancella(index){
             this.todos.splice(index,1);
+        },
+        crea(){
+           this.todos.push({
+               text:this.newtodo,
+               chek:false
+           })
+           this.newtodo = ""; 
         }
-    }
+    }   
 })
             
             
