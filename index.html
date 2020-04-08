@@ -18,11 +18,14 @@
                     <ul class=" list-group">
                         <li  v-for="(todo,index) in todos" class="list-group-item d-flex justify-content-between">
                             {{todo.text}}
-                            <span v-if = "todo.check" class="text-right">
+                            <span v-if = "todo.check" 
+                            @click= "fatto(index)"
+                            class="text-right btn btn-danger">
                                 v
                             </span>
                             <span 
-                            v-else="todo.check"  class="text-right"> da fare
+                            @click= "fatto(index)"
+                            v-else="todo.check"  class=" btn btn-success"> fatto
                             </span>
                             <span @click= "cancella(index)">
                                 x 

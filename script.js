@@ -21,10 +21,13 @@ var app = new Vue({
         crea(){
            this.todos.push({
                text:this.newtodo,
-               chek:false
+               check:false
            })
            this.newtodo = ""; 
-        }
+        },
+        fatto(index){
+            this.todos[index].check = !this.todos[index].check;
+        }, 
     }   
 })
             
